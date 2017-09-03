@@ -19,12 +19,11 @@ after_success:
   - git clone https://${GH_TOKEN}@${GH_REF} ${REPO_NAME}
   - cd ${REPO_NAME} && rm -rf ${TARGET_DIR} && mkdir ${TARGET_DIR} && cd ../
   - cp -PR dist/* ${REPO_NAME}/${TARGET_DIR}
-  - cd ${REPO_NAME} && git add -A
-  - make commit
+  - cd ${REPO_NAME} && git add -A && git commit -m "update by travis-ci"
   - git push "https://${GH_TOKEN}@${GH_REF}" master:master
 
 env:
   global:
-    - REPO_NAME: mickeyjsx.github.com
+    - REPO_NAME: site
     - TARGET_DIR: vstar
     - GH_REF: github.com/mickeyjsx/mickeyjsx.github.com.git
