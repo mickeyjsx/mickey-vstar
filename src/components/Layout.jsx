@@ -9,7 +9,7 @@ const Layout = props => (
     <h1 className={style.title}>VSTAR</h1>
     {props.children}
     <div className={style.footer}>
-      Create with <a
+      This a demo App base on <a
         href="https://github.com/mickeyjsx/mickey"
         rel="noopener noreferrer"
         target="_blank"
