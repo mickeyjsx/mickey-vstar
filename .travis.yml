@@ -26,5 +26,5 @@ after_success:
 env:
   global:
     - REPO_NAME: mickeyjsx.github.com
-    - TARGET_DIR: mickey-vstar
+    - TARGET_DIR: vstar
     - GH_REF: github.com/mickeyjsx/mickeyjsx.github.com.git
