@@ -54,7 +54,7 @@
   "scripts": {
     "lint": "eslint --ext .js,.jsx src/",
     "start": "porsche server",
-    "build": "porsche build --debug=true",
+    "build": "porsche build",
     "precommit": "npm run lint"
   }
 }
