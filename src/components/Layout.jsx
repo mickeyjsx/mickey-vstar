@@ -8,6 +8,13 @@ const Layout = props => (
     <GithubBadge />
     <h1 className={style.title}>VSTAR</h1>
     {props.children}
+    <div className={style.footer}>
+      Create with <a
+        href="https://github.com/mickeyjsx/mickey"
+        rel="noopener noreferrer"
+        target="_blank"
+      >mickey</a>
+    </div>
   </div>
 )
 
