@@ -1,3 +1,5 @@
+import url from 'url'
+import pathToRegexp from 'path-to-regexp'
 import { fetchUser, fetchRepos } from '../services/stars'
 
 export default {
@@ -9,6 +11,21 @@ export default {
     stars: 0,
     repos: [],
     loading: false,
+  },
+
+  subscriptions: {
+    setup({ history }, innerActions) {
+      const { fetch } = innerActions
+      const handler = () => {
+        const uri = url.parse(location.hash.substr(1))
+        const match = pathToRegexp('/:username').exec(uri.pathname)
+        if (match) {
+          fetch({ username: match[1], limit: 10, thresh: 1 })
+        }
+      }
+      history.listen(handler)
+      handler()
+    },
   },
 
   fetch: {
