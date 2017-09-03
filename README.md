@@ -8,4 +8,3 @@
 [![Build Status](https://img.shields.io/travis/mickeyjsx/mickey-vstar.svg?style=flat)](https://travis-ci.org/mickeyjsx/mickey-vstar)
 
 [Live Demo](http://mickeyjsx.github.io/vstar)
-
