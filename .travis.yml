@@ -13,8 +13,9 @@ script:
 after_success:
   - git config --global user.name  "bubkoo"
   - git config --global user.email "bubkoo.wy@gmail.com"
-  - git clone https://$GH_TOKEN@$GH_REF
+  - git clone https://${GH_TOKEN}@${GH_REF}
   - make deploy
+  - git push "https://${GH_TOKEN}@${GH_REF}" master:master
 
 env:
   global:
