@@ -19,7 +19,7 @@ after_success:
   - git clone https://${GH_TOKEN}@${GH_REF} ${REPO_NAME}
   - cd ${REPO_NAME} && rm -rf ${TARGET_DIR} && mkdir ${TARGET_DIR} && cd ../
   - cp -PR dist/* $(REPO_NAME)/$(TARGET_DIR)
-  - cd $(REPO_NAME) && git add -A && git commit -m "Update from travis: `date +'%Y-%m-%d %H:%M:%S'`" && git push "https://${GH_TOKEN}@${GH_REF}" master:master
+  - cd $(REPO_NAME) && git add -A && git commit -m "Update from travis" && git push "https://${GH_TOKEN}@${GH_REF}" master:master
 
 env:
   global:
