@@ -3,5 +3,4 @@
 .vscode
 npm-debug.log
 node_modules
-/i18n_messages
 /dist
