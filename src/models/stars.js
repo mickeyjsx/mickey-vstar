@@ -23,8 +23,8 @@ export default {
           fetch({ username: match[1], limit: 10, thresh: 1 })
         }
       }
-      history.listen(handler)
       handler()
+      history.listen(handler)
     },
   },
 
