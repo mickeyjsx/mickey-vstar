@@ -1,0 +1,25 @@
+env:
+  es6: true
+  node: true
+  browser: true
+
+extends: eslint-config-airbnb
+parser: babel-eslint
+
+rules:
+  semi:
+    - warn
+    - never
+  arrow-body-style:
+    - error
+    - as-needed
+  no-param-reassign:
+    - error
+    - props: false
+  react/jsx-no-bind: off
+  react/prop-types: off
+  jsx-a11y/no-static-element-interactions: off
+
+parserOptions:
+  ecmaFeatures:
+    experimentalObjectRestSpread: true
