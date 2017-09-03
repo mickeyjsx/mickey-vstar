@@ -20,7 +20,9 @@ export default class List extends React.Component {
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                >{item.name}</a>
+                >
+                  {item.name}
+                </a>
                 <span>
                   <i>{item.stars}</i>⭐
                 </span>
