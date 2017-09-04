@@ -32,7 +32,7 @@ export default class SearchForm extends React.Component {
       <Form>
         <FormItem
           {...formItemLayout}
-          label="GitHub Name"
+          label="Github Name"
         >
           {getFieldDecorator('username', { initialValue: this.props.data.username })(
             <Input />,
