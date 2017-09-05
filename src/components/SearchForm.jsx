@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form, Input, Button } from 'antd'
-import { connect, actions } from 'mickey'
+import { connect, injectActions } from 'mickey'
 
 const FormItem = Form.Item
 
@@ -9,13 +9,14 @@ const mapStateToProps = store => ({
 })
 @connect(mapStateToProps)
 @Form.create()
+@injectActions
 export default class SearchForm extends React.Component {
   handleSubmit = () => {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         const { username, limit, thresh } = values
         if (username && username.trim() && !this.props.data.loading) {
-          actions.stars.fetch({ username: username.trim(), limit, thresh })
+          this.props.actions.stars.fetch({ username: username.trim(), limit, thresh })
         }
       }
     })
