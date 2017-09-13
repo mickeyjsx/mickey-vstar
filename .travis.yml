@@ -15,8 +15,8 @@ script:
 - npm run build
 - make update
 - echo ${GH_TOKEN}
-- git push "https://user:${GH_TOKEN}@${GH_REF}" master:master
+- git push "https://${GH_TOKEN}@${GH_REF}" master:master
 env:
   global:
   - GH_REF: github.com/mickeyjsx/mickeyjsx.github.com.git
-  - GH_TOKEN: be6443b02ca21139452be5e8062371bde044d1c2
+  - secure: Ah2/HsNCcgvyp+LBkcG6Q1mtsBNBVveXuruiMoCPBHTXtBsI3Go52K6qLO311nAgVPL8LxXzNIUaxHAILPhpBj8m4cPVQV2LDu6iHPs8LGXP74PB/60k9ZQYvGlt24nkReAsL7iM8fMo4h6OcK/4krE6+kDTy5QcuGM0XdvM5z1E2QKyDPEc/oEZgcp5X1h6m8Xxpsj28V9KCRPNWSANGexfGVdkChGEibp5aBrqSjNcv7YYzj66gcNQzEzowG1qw41+4wqyqrzyQAIpr3FO+UPb6hp7P8twzZ/KLQ+YAbtG09ejGdHvsQbXxPZtcXaISKcvGAux/5gXhVr92nuTSt746ZLKAD9iGaff76YyjI6yDiLkgAxKRuG+fzjTWTNd0YyABB1SqN/nuCqDWvxPWanSfvBJV4dNSjLWQeyz8lJDhHAEd6ritCDB4sCBDwag0/3lD5CIfQJq8n0YUNhQFiqkKc26dU8lxivmL9hgYYPaAuuOoXyUbgUm5lMl/WKF6JKQxl+FEreqqEOr6uC8M3GJMf+qjFEGwsAorv9tuJK2tSRDLFqV0CwCSkfITJEoksofEMpER1Tqgd5Qi6cT0OEMI/MHevoCERR3xrllazs+Mnv1cjNSSzDnzUtBTApK65oE9M1IINbZ0vU3uG2EBPpWrkpZe/RsTdgBcZ2dNnk=
