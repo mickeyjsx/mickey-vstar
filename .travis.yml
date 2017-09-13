@@ -9,21 +9,20 @@ cache:
 
 install: npm install
 
+before_script:
+  - git config --global user.name  "bubkoo"
+  - git config --global user.email "bubkoo.wy@gmail.com"
+  - git clone github.com/mickeyjsx/mickeyjsx.github.com.git site
+
 script:
   - npm run lint
   - npm run build
-
-after_success:
-  - git config --global user.name  "bubkoo"
-  - git config --global user.email "bubkoo.wy@gmail.com"
-  - git clone https://${GH_TOKEN}@${GH_REF} ${REPO_NAME}
-  - cd ${REPO_NAME} && rm -rf ${TARGET_DIR} && mkdir ${TARGET_DIR} && cd ../
-  - cp -PR dist/* ${REPO_NAME}/${TARGET_DIR}
-  - cd ${REPO_NAME} && git add -A && git commit -m "update by travis-ci"
-  - git push "https://${GH_TOKEN}@${GH_REF}" master:master
+  - make update
+  - git push "https://${GH_TOKEN}@${GH_REF}" origin master
 
 env:
   global:
     - REPO_NAME: site
     - TARGET_DIR: vstar
     - GH_REF: github.com/mickeyjsx/mickeyjsx.github.com.git
+    - secure: aVnXlQ0Fp2yJ2YFHBX7K4HRmQk0X3hXw7P8RRAWBnAb/wZYbJW1+nclEsqflHgzMdwL6MHdy/ziJAScia28PfmMekcu/5Z75Q16n4l6wF3lVDXeCuvERRFU1JGEgQ59zQ7WY651JtfSCQai3o+p9Qk8+WAPnVCyLgm1MOzXQHpwlkjR7a6FU7zSlQSpcCOKF5ZyXGhDjnQc4ivwpo++bKRLpz/FOnSBPEgYjcxd1MujFKHwKLlIDcslYMNAWNmW6vUDimjwCYsN2xNjhA+47xByFwYkCR1Izx+c1BJ/WQf0xNQjFE9ze3/2QQKcbUuZSOPpu4J9s7bO9iKVlzlHr9R+5lg7XbKeE4RYvdB88vFyLzdIzMDBXqABBkICTvsMSf4QPJOxNS+JyM9jUgUtqW3Svitn4SXPX28feYv1D0uZdUCb1mMadOnDEeKAoeSoVEi5UM61pNhZEnfacDvOKv3CLNm82sfdebjQtU0gwAllZnu9rXqITquXs1nfgFEDtqo9oskUJRKqSiN0G6bvAMeZpHrQdmg2mHtLkueyTI5Os8biC2o0Kq4L/YOhT1GG1kWzADjY4UdYIiJrZ0rL+4hRhY8i8qjUT1FhngPTOIcm363l2l0Z5hQE3fPJOcy7Lw7MdZj7ZQ0EnZIa6S+tXVSFfKP8rBmP9EzZaS/yPOEU=
