@@ -9,13 +9,13 @@ install: npm install
 before_script:
 - git config --global user.name  "bubkoo"
 - git config --global user.email "bubkoo.wy@gmail.com"
-- git clone https://${GH_REF} site
+- git clone https://${GH_TOKEN}@${GH_REF} site
 script:
 - npm run lint
 - npm run build
 - make update
 - echo ${GH_TOKEN}
-- git push https://${GH_TOKEN}@${GH_REF} origin master
+- git push "https://user:${GH_TOKEN}@${GH_REF}" master:master
 env:
   global:
   - GH_REF: github.com/mickeyjsx/mickeyjsx.github.com.git
