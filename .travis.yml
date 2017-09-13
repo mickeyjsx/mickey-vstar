@@ -17,6 +17,7 @@ before_script:
 script:
   - npm run lint
   - npm run build
+  - cd ${DIR} && git pull && cd ../
   - cp -PR dist/* ${DIR}/${TAR}
   - cd ${DIR}
   - git add -A .
