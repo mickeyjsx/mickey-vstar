@@ -1,6 +1,6 @@
 dir = site
 tar = vstar
-msg = Update from travis: `date +'%Y-%m-%d %H:%M:%S'`
+msg = Updated by travis: `date +'%Y-%m-%d %H:%M:%S'`
 
 update:
 	cd $(dir) && rm -rf $(tar) && mkdir $(tar) && cd ../
