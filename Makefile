@@ -1,5 +1,5 @@
 dir = site
-tar = todo
+tar = vstar
 msg = Update from travis: `date +'%Y-%m-%d %H:%M:%S'`
 
 update:
