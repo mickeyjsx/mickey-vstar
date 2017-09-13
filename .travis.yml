@@ -1,27 +1,22 @@
 language: node_js
 node_js:
-  - "6"
-  - "7"
-
+- '6'
+- '7'
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 install: npm install
-
 before_script:
-  - git config --global user.name  "bubkoo"
-  - git config --global user.email "bubkoo.wy@gmail.com"
-  - git clone https://${GH_REF} site
-
+- git config --global user.name  "bubkoo"
+- git config --global user.email "bubkoo.wy@gmail.com"
+- git clone https://${GH_REF} site
 script:
-  - npm run lint
-  - npm run build
-  - make update
-  - echo ${GH_TOKEN}
-  - git push https://${GH_TOKEN}@${GH_REF} origin master
-
+- npm run lint
+- npm run build
+- make update
+- echo ${GH_TOKEN}
+- git push https://${GH_TOKEN}@${GH_REF} origin master
 env:
   global:
-    - GH_REF: github.com/mickeyjsx/mickeyjsx.github.com.git
-    - GH_TOKEN: 5c26b5d307e99c63f8509607acf3a094fe7babea
+  - GH_REF: github.com/mickeyjsx/mickeyjsx.github.com.git
+  - secure: XRffxnZpNp5TMZENZ/ok/pKimiVBpzS94cdxoTAoX3NL5+0OKTaAsPyAc/HCwdbR2Ctw7rj6O3Dbjyu6sVbJsypyJuwbFtYWWUEzufJpAo6ccKV2nJNTM8sdNfBNor/sogg+Cw+zDVOTrCbtbdvsWo3yuK4Yp8BtDbYhzXl8BT3twaP1hIcGWtkSFrc1exbiTKcb7AN5/fVrl4rE72KfbQwJmFLJx290g915CbAVHfEDTXW5fvhFDIB16TW47WJSgQYdg76vAV/54YX2mCKc11RqDdzhH4krj56pjyVcPG+bf6VSDFLq4VaSHcsUifC6qVrmUJlMunDIpk1u/OnMNCPu3ch8r6XRY5qejkbFHfzMOoirLGRwmCDKVd3pFoe9ufO2+QmE/BhciPQgTyQ7pZ+YdgP+yFpbZwtHOuLoJ+37Uxofgamutiy+QvY/c1KHDWg9vTzJQPNRa6mXnBwMgFkKy2yEAXaAP3GAqeeU2DptOWDjT+/vDOJc5QxembHZPQxXUXr0v6KDkBhtXYap9+BK0kBjBqpB8a4mGm3DFYC9gh5XEFadFmwx2J8K1auLq8cpn5bd6RWr45xyluf5plfRtgG8bnqvE9RxWYj1xH3xcYqizUulIZbM2eXV9NQBInWYOmacZUvfdwRafn9lVXkb6szPsDU8XH2MiXmH6a8=
