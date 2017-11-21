@@ -13,23 +13,21 @@ export default {
     loading: false,
   },
 
-  subscriptions: {
-    setup({ history }, innerActions) {
-      const { fetch } = innerActions
-      const handler = () => {
-        const uri = url.parse(location.hash.substr(1))
-        const match = pathToRegexp('/:username').exec(uri.pathname)
-        if (match) {
-          fetch({ username: match[1], limit: 10, thresh: 1 })
-        }
+  subscriptions({ history }, innerActions) {
+    const { fetch } = innerActions
+    const handler = () => {
+      const uri = url.parse(location.hash.substr(1))
+      const match = pathToRegexp('/:username').exec(uri.pathname)
+      if (match) {
+        fetch({ username: match[1], limit: 10, thresh: 1 })
       }
-      handler()
-      history.listen(handler)
-    },
+    }
+    handler()
+    history.listen(handler)
   },
 
   fetch: {
-    * effect({ username }, e, c, innerActions) {
+    * effect({ username }, d, c, innerActions) {
       yield innerActions.fetchUser(username)
     },
     prepare: (state, { username, limit, thresh }) => ({
